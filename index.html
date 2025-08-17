@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>UESTC AI Lab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- 引入 React 和 ReactDOM -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <!-- 引入 Babel 以支持 JSX -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <style>
+    body { margin: 0; font-family: system-ui, sans-serif; background: #f6f7fb; }
+  </style>
+  <!-- Tailwind CDN（可选，若想要更好样式） -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+// -------------------- 下面是你的 uestc_ailab.jsx 代码 --------------------
+// 去掉 import/export，lucide-react 图标用 SVG 占位符或简单替换
+
+// 图标替代（简单 SVG 占位符）
+const Mail = (props) => <svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect width="24" height="24" fill="none"/><path d="M4 4h16v16H4z" strokeWidth="2"/><path d="M4 4l8 8 8-8" strokeWidth="2"/></svg>;
+const Calendar = (props) => <svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect width="24" height="24" fill="none"/><rect x="3" y="4" width="18" height="18" rx="2" strokeWidth="2"/><path d="M16 2v4M8 2v4M3 10h18" strokeWidth="2"/></svg>;
+const Users = (props) => <svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="9" cy="7" r="4" strokeWidth="2"/><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2" strokeWidth="2"/><circle cx="17" cy="7" r="4" strokeWidth="2"/></svg>;
+const BookOpenText = (props) => <svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect width="24" height="24" fill="none"/><path d="M2 19V5a2 2 0 0 1 2-2h7v16H4a2 2 0 0 1-2-2zm20 0V5a2 2 0 0 0-2-2h-7v16h7a2 2 0 0 0 2-2z" strokeWidth="2"/></svg>;
+const Handshake = (props) => <svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect width="24" height="24" fill="none"/><path d="M4 12l1.5 1.5a2 2 0 0 0 2.8 0l1.2-1.2a2 2 0 0 1 2.8 0l1.2 1.2a2 2 0 0 0 2.8 0L20 12" strokeWidth="2"/></svg>;
+const Megaphone = (props) => <svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect width="24" height="24" fill="none"/><path d="M3 11v2a1 1 0 0 0 1 1h2l3 5v-6h4l3-5v6h2a1 1 0 0 0 1-1v-2" strokeWidth="2"/></svg>;
+const MapPin = (props) => <svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="10" r="3" strokeWidth="2"/><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" strokeWidth="2"/></svg>;
+const ExternalLink = (props) => <svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect width="24" height="24" fill="none"/><path d="M18 13v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" strokeWidth="2"/><polyline points="15 3 21 3 21 9" strokeWidth="2"/><line x1="10" y1="14" x2="21" y2="3" strokeWidth="2"/></svg>;
+const Globe = (props) => <svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="10" strokeWidth="2"/><ellipse cx="12" cy="12" rx="10" ry="4" strokeWidth="2"/></svg>;
+
+// ... existing code ...
+// 下面粘贴 uestc_ailab.jsx 代码，去掉 import/export，最后加 ReactDOM.createRoot(...)
+
+// --------------------------------------------------
+// UESTC AI 社 / AI Lab — 单文件 React 站点（可直接在画布预览）
+// ... 省略注释 ...
+// --------------------------------------------------
+
+// —— 站点数据（可替换为真实内容）
+const data = {
+  club: {
+    nameZh: 'UESTC AI社',
+    nameEn: 'UESTC AI Club',
+    slogan: '连接校园与前沿 AI 的桥梁',
+    brief:
+      '我们在电子科技大学发起，定期举办讲座、Workshop、竞赛、Talk 与 Reading Group，分享最新的 AI 进展与工程实践。',
+  },
+  ctas: {
+    primaryText: '加入社团',
+    primaryHref: 'mailto:uestc.ai.club@example.com',
+    secondaryText: '了解活动',
+    secondaryHref: '#/events',
+  },
+  events: [
+    { id: 'e1',  date: '2025-09-20', title: '秋季开学技术沙龙：从 Agent 到 RAG 的工程落地', type: 'event', tags: ['沙龙','工程实践'], location: '清水河校区 创业基地A区', link: '#', cover: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1600&auto=format&fit=crop', desc: '面向新学期的技术交流，覆盖 RAG、函数调用、评测与部署。' },
+    { id: 'e2',  date: '2025-07-12', title: '竞赛战报：多模态检索队 省赛一等奖', type: 'news',  tags: ['获奖','多模态'], location: '', link: '#', cover: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1600&auto=format&fit=crop', desc: '社团队伍在省赛中获得一等奖，开源代码与报告同步发布。' },
+    { id: 'e3',  date: '2025-05-28', title: '特邀 Talk：大模型安全与对齐', type: 'talk', tags: ['安全','对齐'], location: '沙河校区 科学馆报告厅', link: '#', cover: 'https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1600&auto=format&fit=crop', desc: '邀请产业与学界嘉宾分享 RLHF、红队测试与评测体系。' },
+    { id: 'e4',  date: '2025-04-10', title: '校内编程马拉松：Agent for Campus', type: 'competition', tags: ['Hackathon','Agent'], location: '清水河 创新中心', link: '#', cover: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=1600&auto=format&fit=crop', desc: '48 小时构建面向校园生活的智能体应用。' },
+    { id: 'e5',  date: '2025-08-01', title: '与阿里云共建校企联合实践基地', type: 'news', tags: ['合作','阿里云'], location: '', link: '#', cover: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=1600&auto=format&fit=crop', desc: '签署合作备忘录，联合举办云上 AI 工程训练营。' },
+    { id: 'e6',  date: '2025-06-15', title: '百度 Paddle 课程进校园：第一期结营', type: 'news', tags: ['课程','百度'], location: '', link: '#', cover: 'https://images.unsplash.com/photo-1581093588401-16ec8a3cc2d9?q=80&w=1600&auto=format&fit=crop', desc: '与 Paddle 团队共开深度学习实战课，学员项目路演圆满结束。' },
+    { id: 'e7',  date: '2025-03-20', title: 'Talk 回顾：多模态检索在工业界的落地', type: 'news', tags: ['回顾','多模态'], location: '', link: '#', cover: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1600&auto=format&fit=crop', desc: '分享检索召回、特征对齐与端到端评测体系。' },
+    { id: 'e8',  date: '2024-12-10', title: '网站上线：统一活动、成员与论文入口', type: 'news', tags: ['站点','上线'], location: '', link: '#', cover: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1600&auto=format&fit=crop', desc: '首版官网发布，欢迎反馈与共建。' },
+    { id: 'e9',  date: '2025-02-01', title: '寒假科研营启动：LLM 系统工程', type: 'news', tags: ['科研营','LLM'], location: '', link: '#', cover: 'https://images.unsplash.com/photo-1529336953121-adb2b81f2d2d?q=80&w=1600&auto=format&fit=crop', desc: '覆盖数据治理、对齐与推理评测。' },
+    { id: 'e10', date: '2025-07-25', title: '嘉宾 Talk 预告：AI for Science 与材料发现', type: 'news', tags: ['预告','AI4Science'], location: '', link: '#', cover: 'https://images.unsplash.com/photo-1581092921461-eab62e97a780?q=80&w=1600&auto=format&fit=crop', desc: '与深势科技等合作伙伴共同举办。' },
+  ],
+  members: {
+    founders: [
+      { name: '张三', role: '联合创始人', avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=480&auto=format&fit=crop', homepage: 'https://example.com/~zhangsan' },
+      { name: '李四', role: '联合创始人', avatar: 'https://images.unsplash.com/photo-1502685104226-ee32379fefbe?q=80&w=480&auto=format&fit=crop', homepage: 'https://example.com/~lisi' },
+    ],
+    core: [
+      { name: '王五', role: '社团主席',   avatar: 'https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=480&auto=format&fit=crop', homepage: '' },
+      { name: '赵六', role: '活动负责人', avatar: 'https://images.unsplash.com/photo-1544717305-996b815c338c?q=80&w=480&auto=format&fit=crop', homepage: '' },
+      { name: '钱七', role: '外联负责人', avatar: 'https://images.unsplash.com/photo-1541101767792-f9b2b1c4f127?q=80&w=480&auto=format&fit=crop', homepage: '' },
+      { name: '孙八', role: '技术负责人', avatar: 'https://images.unsplash.com/photo-1541534401786-2077eed87a52?q=80&w=480&auto=format&fit=crop', homepage: '' },
+    ],
+  },
+  partners: [
+    { name: '百度', url: 'https://www.baidu.com' },
+    { name: '腾讯', url: 'https://www.tencent.com' },
+    { name: '阿里巴巴', url: 'https://www.alibabagroup.com' },
+    { name: '深势科技 (DP Technology)', url: 'https://www.dp.tech' },
+  ],
+  publications: [
+    { title: 'Efficient Retrieval-Augmented Agents for Campus Services', authors: ['Zhang S.','Li S.','Wang W.','Zhao L.'], venue: 'NeurIPS', year: 2024, link: '#', tags: ['Agent','RAG','Systems'] },
+    { title: 'Robust Multimodal Retrieval with Structured Prompts', authors: ['Qian Q.','Sun B.','Li S.','Zhang S.'], venue: 'ICLR', year: 2025, link: '#', tags: ['Multimodal','Retrieval'] },
+    { title: 'Safe Fine-tuning for Domain LLMs', authors: ['Li S.','Zhang S.'], venue: 'ACL', year: 2023, link: '#', tags: ['Safety','NLP'] },
+  ],
+  contact: { email: 'uestc.ai.club@example.com', location: '电子科技大学 · 清水河校区', mapLink: 'https://maps.google.com', wechat: 'UESTC-AI-Club' },
+};
+
+// —— 工具函数
+const cx = (...cls) => cls.filter(Boolean).join(' ');
+const formatDate = (iso) => {
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return iso;
+  const y = d.getFullYear();
+  const m = `${d.getMonth() + 1}`.padStart(2, '0');
+  const day = `${d.getDate()}`.padStart(2, '0');
+  return `${y}-${m}-${day}`;
+};
+const PageKeys = ['home', 'events', 'members', 'partners', 'pubs', 'contact'];
+const parseHashRoute = (hash) => {
+  const s = (hash || '').replace(/^#\/?/, '');
+  const key = s.split('/')[0];
+  return PageKeys.includes(key) ? key : 'home';
+};
+
+// —— 根组件
+function App() {
+  const [route, setRoute] = React.useState('home');
+
+  React.useEffect(() => {
+    const parse = () => setRoute(parseHashRoute(window.location.hash));
+    parse();
+    window.addEventListener('hashchange', parse);
+    return () => window.removeEventListener('hashchange', parse);
+  }, []);
+
+  const goto = (key) => { window.location.hash = `/${key}`; };
+
+  // —— 自测用例（不可见于 UI）
+  React.useEffect(() => {
+    try {
+      // ... 省略自测 ...
+    } catch (err) {
+      // ... 省略 ...
+    }
+  }, []);
+
+  return (
+    <div className="min-h-screen">
+      <Header route={route} onNav={goto} />
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+        {route === 'home' && <Home />}
+        {route === 'events' && <Events />}
+        {route === 'members' && <Members />}
+        {route === 'partners' && <Partners />}
+        {route === 'pubs' && <Publications />}
+        {route === 'contact' && <Contact />}
+      </main>
+      <Footer />
+    </div>
+  );
+}
+
+// ... 其余组件原样粘贴 ...
+// Header, NavLink, Home, Stats, Events, Members, MemberCard, Partners, Publications, Contact, NewsFeed, Footer
+// 只需把 useState/useEffect/useMemo 前面加 React. 即可
+
+// ... 省略 ...
+
+// -------------------- 挂载到 root --------------------
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+  </script>
+</body>
+</html> 
