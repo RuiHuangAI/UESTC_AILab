@@ -40,7 +40,7 @@
         <button data-nav="pubs" class="nav-link text-gray-600 hover:text-black">发表</button>
         <button data-nav="contact" class="nav-link text-gray-600 hover:text-black">联系我们</button>
       </nav>
-      <a id="cta-primary" href="#/contact" class="inline-flex items-center rounded-xl border px-3 py-2 text-sm font-medium hover:bg-gray-50">加入我们</a>
+      <a id="cta-primary" href="#/contact" class="inline-flex items-center rounded-xl border px-3 py-2 text-sm font-medium hover:bg-gray-50">加入社团</a>
     </div>
   </header>
 
@@ -52,6 +52,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 text-sm text-gray-500 flex flex-col md:flex-row items-center justify-between gap-4">
       <p>© <span id="year"></span> <span id="club-name-zh-foot">UESTC AI社</span></p>
       <div class="flex gap-4">
+        <a href="#/home" class="hover:text-gray-700">主页</a>
         <a href="#/events" class="hover:text-gray-700">活动</a>
         <a href="#/members" class="hover:text-gray-700">成员</a>
         <a href="#/partners" class="hover:text-gray-700">合作</a>
@@ -70,7 +71,7 @@
       "slogan": "连接校园与前沿 AI 的桥梁",
       "brief": "我们在电子科技大学发起，定期举办讲座、Workshop、竞赛、Talk 与 Reading Group，分享最新的 AI 进展与工程实践。"
     },
-    "ctas": { "primaryText": "加入社团", "primaryHref": "mailto:uestc.ai.club@example.com", "secondaryText": "了解活动", "secondaryHref": "#/events" },
+    "ctas": { "primaryText": "加入社团", "primaryHref": "#/contact", "secondaryText": "了解活动", "secondaryHref": "#/events" },
     "events": [
       { "id": "e1",  "date": "2025-09-20", "title": "秋季开学技术沙龙：从 Agent 到 RAG 的工程落地", "type": "event", "tags": ["沙龙","工程实践"], "location": "清水河校区 创业基地A区", "link": "#", "cover": "https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1600&auto=format&fit=crop", "desc": "面向新学期的技术交流，覆盖 RAG、函数调用、评测与部署。" },
       { "id": "e2",  "date": "2025-07-12", "title": "竞赛战报：多模态检索队 省赛一等奖", "type": "news",  "tags": ["获奖","多模态"], "location": "", "link": "#", "cover": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1600&auto=format&fit=crop", "desc": "社团队伍在省赛中获得一等奖，开源代码与报告同步发布。" },
@@ -106,7 +107,7 @@
       { "title": "Robust Multimodal Retrieval with Structured Prompts", "authors": ["Qian Q.","Sun B.","Li S.","Zhang S."], "venue": "ICLR", "year": 2025, "link": "#", "tags": ["Multimodal","Retrieval"] },
       { "title": "Safe Fine-tuning for Domain LLMs", "authors": ["Li S.","Zhang S."], "venue": "ACL", "year": 2023, "link": "#", "tags": ["Safety","NLP"] }
     ],
-    "contact": { "email": "uestc.ai.club@example.com", "location": "电子科技大学 · 清水河校区", "mapLink": "https://maps.google.com", "wechat": "UESTC-AI-Club" }
+    "contact": { "email": "uestc.ai.club@example.com", "location": "电子科技大学 · 清水河校区", "mapLink": "https://maps.google.com", "wechat": "602142028" }
   }
   </script>
 
@@ -307,23 +308,31 @@
       return `
         <section class="py-10">
           <div class="flex items-center gap-2 mb-6"><i data-lucide="mail" class="w-5 h-5"></i><h2 class="text-2xl md:text-3xl font-bold">Contact Us</h2></div>
-          <div class="grid md:grid-cols-2 gap-6">
+          <div class="grid md:grid-cols-[1.3fr_1fr] gap-6">
             <div class="card bg-white p-6">
               <h3 class="font-semibold">联系方式</h3>
               <ul class="mt-3 space-y-2 text-gray-700">
-                <li class="flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4"></i><a class="hover:underline" href="mailto:${c.email}">${c.email}</a></li>
                 <li class="flex items-center gap-2"><i data-lucide="map-pin" class="w-4 h-4"></i>${c.location}</li>
-                <li class="flex items-center gap-2"><i data-lucide="users" class="w-4 h-4"></i>WeChat：${c.wechat}</li>
+                <li class="flex items-center gap-2"><i data-lucide="users" class="w-4 h-4"></i>QQ群 : ${c.wechat}</li>
+                <li class="flex items-center gap-2">
+                  <i data-lucide="mail" class="w-4 h-4"></i>
+                  <a class="hover:underline" href="mailto:jayhuang@std.uestc.edu.cn">jayhuang@std.uestc.edu.cn</a>
+                </li>
+                <li class="pl-6">
+                  <a class="hover:underline" href="mailto:huang_rui@std.uestc.edu.cn">huang_rui@std.uestc.edu.cn</a>
+                </li>
               </ul>
-              <form class="mt-6 space-y-3" action="mailto:${c.email}" method="post">
-                <div><label class="text-sm text-gray-600">你的邮箱</label><input required type="email" class="mt-1 w-full rounded-xl border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" /></div>
-                <div><label class="text-sm text-gray-600">留言</label><textarea required rows="4" class="mt-1 w-full rounded-xl border px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea></div>
-                <button type="submit" class="w-full rounded-xl bg-blue-600 text-white px-4 py-2 font-semibold hover:bg-blue-700">发送</button>
-              </form>
+              <p class="mt-6 text-black text-base">
+                <span class="font-bold text-red-600">我们期待与你联系或你的加入</span>，欢迎——<br/>
+                💡 对AI感兴趣、希望入门学习的低年级同学<br/>
+                🧑‍💻 希望讨论交流的AI研究者<br/>
+                🎓 有志于加入AI社核心团队的同学<br/>
+                🏆 希望与我们一起在顶尖会议上发表论文的伙伴<br/>
+                🤝 有意交流合作的企业、组织<br/>
+                🤗 以及所有热爱AI的朋友与潜在的合作机会!
+              </p>
             </div>
-            <a href="${c.mapLink}" class="card bg-white p-0 overflow-hidden min-h-[280px] grid place-content-center text-gray-500 hover:shadow" aria-label="打开地图">
-              <div class="p-6 text-center"><i data-lucide="map-pin" class="w-6 h-6 mx-auto"></i><div class="mt-2 text-sm">点击打开地图</div></div>
-            </a>
+            <div class="card bg-white p-0 overflow-hidden min-h-[430px] grid place-content-center"><img src="logos/QQGroup.png" alt="QQ群二维码" class="w-full max-w-xs max-h-[920px]" /></div>
           </div>
         </section>
       `;
