@@ -85,8 +85,9 @@
     "members": {
       "founders": [
         { "name": "黄洁", "role": "2023级·联合创始人 ", "avatar": "photos/JieHuang.jpg", "homepage": "https://scholar.google.com.hk/citations?user=uJUmglMRMVMC&hl=zh-CN" },
-        { "name": "黄锐", "role": "2023级·联合创始人", "avatar": "photos/RuiHuang.jpeg", "homepage": "https://scholar.google.com.hk/citations?user=Bdam5iQAAAAJ&hl=zh-CN" }
-      ],
+        { "name": "黄锐", "role": "2023级·联合创始人", "avatar": "photos/RuiHuang.jpeg", "homepage": "https://scholar.google.com.hk/citations?user=Bdam5iQAAAAJ&hl=zh-CN" },
+        { "name": "夏泽宇", "role": "2024级·现任社长", "avatar": "photos/ZeyuXia.jpg", "homepage": "" }
+        ],
       "core": [
         { "name": "张藉元", "role": "2021级·PHD of UESTC", "avatar": "photos/JiyuanZhang.jpg", "homepage": "https://ericzhang1412.github.io/" },
         { "name": "卞浩宇", "role": "2022级", "avatar": "photos/HaoyuBian.jpg", "homepage": "https://scholar.google.com.hk/citations?user=NXmQSX4AAAAJ&hl=zh-CN&oi=ao" },
@@ -109,19 +110,24 @@
         { "name": "郭展羽", "role": "2024级", "avatar": "photos/ZhanyuGuo.jpg", "homepage": "" },
         { "name": "王佳裕", "role": "2024级", "avatar": "photos/JiayuWang.jpg", "homepage": "" },
         { "name": "罗罡", "role": "2024级", "avatar": "photos/GenLuo.jpg", "homepage": "" },
+        { "name": "刘冰南", "role": "2024级", "avatar": "photos/BingnanLiu.jpg", "homepage": "" },
         { "name": "路仕腾", "role": "2024级", "avatar": "photos/ShitengLu.jpeg", "homepage": "" }
       ]
     },
     "partners": [
-      { "name": "百度", "url": "https://www.baidu.com", "logo": "baidu.png" },
-      { "name": "腾讯", "url": "https://www.tencent.com", "logo": "tencent.png" },
-      { "name": "阿里巴巴", "url": "https://www.alibabagroup.com", "logo": "alibaba.png" },
-      { "name": "深势科技 (DP Technology)", "url": "https://www.dp.tech", "logo": "dp.png" }
+      { "name": "百度飞浆", "url": "https://www.paddlepaddle.org.cn/", "logo": "logos/Baidu.jpg" },
+      { "name": "深势科技 (DP Technology)", "url": "https://www.dp.tech", "logo": "logos/DPT.jpg" },
+      { "name": "华为昇腾 (Ascend)", "url": "https://www.huawei.com/cn/technology-platform/ascend", "logo": "logos/Ascend.png" }
     ],
     "publications": [
-      { "title": "Efficient Retrieval-Augmented Agents for Campus Services", "authors": ["Zhang S.","Li S.","Wang W.","Zhao L."], "venue": "NeurIPS", "year": 2024, "link": "#", "tags": ["Agent","RAG","Systems"] },
       { "title": "Robust Multimodal Retrieval with Structured Prompts", "authors": ["Qian Q.","Sun B.","Li S.","Zhang S."], "venue": "ICLR", "year": 2025, "link": "#", "tags": ["Multimodal","Retrieval"] },
-      { "title": "Safe Fine-tuning for Domain LLMs", "authors": ["Li S.","Zhang S."], "venue": "ACL", "year": 2023, "link": "#", "tags": ["Safety","NLP"] }
+      { "title": "Efficient Retrieval-Augmented Agents for Campus Services", "authors": ["Zhang S.","Li S.","Wang W.","Zhao L."], "venue": "NeurIPS", "year": 2024, "link": "#", "tags": ["Agent","RAG","Systems"] },
+      { "title": "Large Language Models for Scientific Discovery", "authors": ["Wang W.","Chen H.","Liu Y.","Zhou X."], "venue": "NeurIPS", "year": 2025, "link": "#", "tags": ["LLM","Science"] },
+      { "title": "Vision Transformers in Medical Imaging", "authors": ["Li S.","Zhang S.","Sun B."], "venue": "CVPR", "year": 2024, "link": "#", "tags": ["Vision","Transformer","Medical"] },
+      { "title": "Safe Fine-tuning for Domain LLMs", "authors": ["Li S.","Zhang S."], "venue": "ACL", "year": 2024, "link": "#", "tags": ["Safety","NLP"] },
+      { "title": "Graph Neural Networks for Chemistry", "authors": ["Zhao L.","Wang W."], "venue": "ICLR", "year": 2025, "link": "#", "tags": ["GNN","Chemistry"] },
+      { "title": "Self-supervised Learning for Speech Recognition", "authors": ["Sun B.","Li S."], "venue": "Interspeech", "year": 2024, "link": "#", "tags": ["Speech","SSL"] },
+      { "title": "Multi-agent Collaboration in Robotics", "authors": ["Zhang S.","Wang W.","Li S."], "venue": "ICRA", "year": 2025, "link": "#", "tags": ["Robotics","Multi-agent"] }
     ],
     "contact": { "email": "uestc.ai.club@example.com", "location": "电子科技大学 · 清水河校区", "mapLink": "https://maps.google.com", "wechat": "602142028" }
   }
@@ -211,8 +217,8 @@
           <div class="flex items-center gap-2 mb-6"><i data-lucide="handshake" class="w-5 h-5"></i><h2 class="text-2xl md:text-3xl font-bold">合作伙伴</h2></div>
           <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
             ${DATA.partners.map(p=> `
-              <div class="card bg-white p-6 flex items-center justify-center">
-                <img src="logos/${p.logo || 'AILab.png'}" alt="${p.name} Logo" class="h-12 object-contain" title="${p.name}" />
+              <div class="card bg-white p-6 flex items-center justify-center min-h-[80px]">
+                <img src="${p.logo}" alt="${p.name} Logo" class="h-24 w-full object-contain" style="max-width:100%;max-height:96px;" title="${p.name}" />
               </div>
             `).join('')}
           </div>
@@ -230,19 +236,22 @@
           <div class="flex flex-wrap gap-2 mb-6">
             ${tabs.map(([k,label])=> `<button data-tab="${k}" class="tab-btn rounded-xl px-3 py-1.5 text-sm border ${state.eventsFilter===k? 'bg-blue-600 text-white border-blue-600':'bg-white hover:bg-gray-50'}">${label}</button>`).join('')}
           </div>
-          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="space-y-4">
             ${items.map(e=> `
-              <article class="card bg-white p-5 h-full flex flex-col">
-                <div class="flex items-center justify-between">
-                  <span class="inline-flex items-center gap-2 text-xs text-gray-500"><i data-lucide="calendar" class="w-4 h-4"></i> ${fmtDate(e.date)}</span>
-                  <span class="inline-flex items-center text-xs rounded-full border px-2 py-0.5 text-gray-600">${e.type}</span>
-                </div>
-                <h3 class="mt-3 text-lg font-semibold">${e.title}</h3>
-                ${e.location? `<p class=\"mt-1 text-sm text-gray-500 inline-flex items-center gap-1\"><i data-lucide=\"map-pin\" class=\"w-4 h-4\"></i> ${e.location}</p>`:''}
-                <p class="mt-3 text-sm text-gray-600 flex-1">${e.desc||''}</p>
-                <div class="mt-4 flex items-center justify-between">
-                  <div class="flex gap-2 flex-wrap">${(e.tags||[]).map(t=> `<span class="text-xs rounded-full bg-gray-100 px-2 py-0.5">${t}</span>`).join('')}</div>
-                  <a href="${e.link}" class="text-sm inline-flex items-center gap-1 text-blue-600 hover:underline">了解更多 <i data-lucide="external-link" class="w-4 h-4"></i></a>
+              <article class="card bg-white overflow-hidden hover:shadow transition grid md:grid-cols-[260px_1fr]">
+                <div class="aspect-[16/9] md:aspect-auto md:h-full"><img src="${e.cover || 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1600&auto=format&fit=crop'}" alt="${e.title} 配图" class="h-full w-full object-cover" loading="lazy"/></div>
+                <div class="p-4 md:p-5 flex flex-col">
+                  <div class="flex items-center justify-between">
+                    <span class="inline-flex items-center gap-2 text-xs text-gray-500"><i data-lucide="calendar" class="w-4 h-4"></i> ${fmtDate(e.date)}</span>
+                    <span class="inline-flex items-center text-xs rounded-full border px-2 py-0.5 text-gray-600">${e.type}</span>
+                  </div>
+                  <h3 class="mt-3 text-lg font-semibold">${e.title}</h3>
+                  ${e.location? `<p class=\"mt-1 text-sm text-gray-500 inline-flex items-center gap-1\"><i data-lucide=\"map-pin\" class=\"w-4 h-4\"></i> ${e.location}</p>`:''}
+                  <p class="mt-3 text-sm text-gray-600 flex-1">${e.desc||''}</p>
+                  <div class="mt-4 flex items-center justify-between">
+                    <div class="flex gap-2 flex-wrap">${(e.tags||[]).map(t=> `<span class="text-xs rounded-full bg-gray-100 px-2 py-0.5">${t}</span>`).join('')}</div>
+                    <a href="${e.link}" class="text-sm inline-flex items-center gap-1 text-blue-600 hover:underline">了解更多 <i data-lucide="external-link" class="w-4 h-4"></i></a>
+                  </div>
                 </div>
               </article>
             `).join('')}
@@ -255,8 +264,8 @@
       return `
         <section class="py-10">
           <div class="flex items-center gap-2 mb-6"><i data-lucide="users" class="w-5 h-5"></i><h2 class="text-2xl md:text-3xl font-bold">核心成员</h2></div>
-          <h3 class="text-lg font-semibold">创始人</h3>
-          <p class="text-sm text-gray-500 mb-4">Founders</p>
+          <h3 class="text-lg font-semibold">创始人/社长</h3>
+          <p class="text-sm text-gray-500 mb-4">Founders/Chair</p>
           <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
             ${DATA.members.founders.map(m=> memberCard(m)).join('')}
           </div>
@@ -282,29 +291,35 @@
     }
 
     function renderPubs(state){
-      const venues = Array.from(new Set(DATA.publications.map(p=> p.venue)));
-      state.pubVenue ??= '全部';
-      const list = DATA.publications.filter(p=> state.pubVenue==='全部' ? true : p.venue===state.pubVenue);
+      // 按年份分组
+      const pubsByYear = {};
+      DATA.publications.forEach(p => {
+        pubsByYear[p.year] = pubsByYear[p.year] || [];
+        pubsByYear[p.year].push(p);
+      });
+      const years = Object.keys(pubsByYear).sort((a, b) => b - a);
       return `
         <section class="py-10">
-          <div class="flex items-center gap-2 mb-6"><i data-lucide="book-open-text" class="w-5 h-5"></i><h2 class="text-2xl md:text-3xl font-bold">发表（示例）</h2></div>
+          <div class="flex items-center gap-2 mb-6"><i data-lucide="book-open-text" class="w-5 h-5"></i><h2 class="text-2xl md:text-3xl font-bold">发表</h2></div>
           <div class="flex flex-wrap gap-2 mb-6">
-            <button data-venue="全部" class="venue-btn rounded-xl px-3 py-1.5 text-sm border ${state.pubVenue==='全部'?'bg-blue-600 text-white border-blue-600':'bg-white hover:bg-gray-50'}">全部</button>
-            ${venues.map(v=> `<button data-venue="${v}" class="venue-btn rounded-xl px-3 py-1.5 text-sm border ${state.pubVenue===v?'bg-blue-600 text-white border-blue-600':'bg-white hover:bg-gray-50'}">${v}</button>`).join('')}
+            <button class="venue-btn rounded-xl px-3 py-1.5 text-sm border bg-blue-600 text-white border-blue-600">全部</button>
           </div>
-          <ol class="space-y-4">
-            ${list.sort((a,b)=> b.year-a.year).map(p=> `
-              <li class="card bg-white p-5">
-                <div class="flex flex-wrap items-baseline gap-2"><span class="text-sm inline-flex items-center rounded-full bg-gray-100 px-2 py-0.5">${p.venue}</span><span class="text-sm text-gray-500">${p.year}</span></div>
-                <h3 class="mt-1 font-semibold text-lg">${p.title}</h3>
-                <p class="text-sm text-gray-600 mt-1">${p.authors.join(', ')}</p>
-                <div class="mt-3 flex items-center justify-between">
-                  <div class="flex gap-2 flex-wrap">${(p.tags||[]).map(t=> `<span class="text-xs rounded-full bg-gray-100 px-2 py-0.5">${t}</span>`).join('')}</div>
-                  <a href="${p.link}" class="text-sm inline-flex items-center gap-1 text-blue-600 hover:underline">PDF/项目 <i data-lucide="external-link" class="w-4 h-4"></i></a>
-                </div>
-              </li>
-            `).join('')}
-          </ol>
+          ${years.map(year => `
+            <h3 class="text-xl font-bold mt-10 mb-4">${year}</h3>
+            <ol class="space-y-4">
+              ${pubsByYear[year].map(p=> `
+                <li class="card bg-white p-5">
+                  <div class="flex flex-wrap items-baseline gap-2"><span class="text-sm inline-flex items-center rounded-full bg-gray-100 px-2 py-0.5">${p.venue}</span></div>
+                  <h3 class="mt-1 font-semibold text-lg">${p.title}</h3>
+                  <p class="text-sm text-gray-600 mt-1">${p.authors.join(', ')}</p>
+                  <div class="mt-3 flex items-center justify-between">
+                    <div class="flex gap-2 flex-wrap">${(p.tags||[]).map(t=> `<span class="text-xs rounded-full bg-gray-100 px-2 py-0.5">${t}</span>`).join('')}</div>
+                    <a href="${p.link}" class="text-sm inline-flex items-center gap-1 text-blue-600 hover:underline">PDF/项目 <i data-lucide="external-link" class="w-4 h-4"></i></a>
+                  </div>
+                </li>
+              `).join('')}
+            </ol>
+          `).join('')}
           <p class="text-xs text-gray-500 mt-4">上方为展示用占位条目；请替换为真实论文、项目与海报链接。</p>
         </section>
       `;
@@ -384,7 +399,7 @@
         // } }
       }
       if(route==='pubs'){
-        $$('#app .venue-btn').forEach(b=> b.onclick = ()=> { state.pubVenue = b.dataset.venue; render(); });
+        // $$('#app .venue-btn').forEach(b=> b.onclick = ()=> { state.pubVenue = b.dataset.venue; render(); }); // Removed venue selection
       }
 
       // 渲染完替换图标
