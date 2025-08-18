@@ -36,7 +36,6 @@
         <button data-nav="home" class="nav-link text-gray-600 hover:text-black">主页</button>
         <button data-nav="events" class="nav-link text-gray-600 hover:text-black">活动·新闻</button>
         <button data-nav="members" class="nav-link text-gray-600 hover:text-black">成员</button>
-        <button data-nav="partners" class="nav-link text-gray-600 hover:text-black">合作伙伴</button>
         <button data-nav="pubs" class="nav-link text-gray-600 hover:text-black">发表</button>
         <button data-nav="contact" class="nav-link text-gray-600 hover:text-black">联系我们</button>
       </nav>
@@ -55,7 +54,6 @@
         <a href="#/home" class="hover:text-gray-700">主页</a>
         <a href="#/events" class="hover:text-gray-700">活动</a>
         <a href="#/members" class="hover:text-gray-700">成员</a>
-        <a href="#/partners" class="hover:text-gray-700">合作</a>
         <a href="#/pubs" class="hover:text-gray-700">发表</a>
         <a href="#/contact" class="hover:text-gray-700">联系</a>
       </div>
@@ -115,10 +113,10 @@
       ]
     },
     "partners": [
-      { "name": "百度", "url": "https://www.baidu.com" },
-      { "name": "腾讯", "url": "https://www.tencent.com" },
-      { "name": "阿里巴巴", "url": "https://www.alibabagroup.com" },
-      { "name": "深势科技 (DP Technology)", "url": "https://www.dp.tech" }
+      { "name": "百度", "url": "https://www.baidu.com", "logo": "baidu.png" },
+      { "name": "腾讯", "url": "https://www.tencent.com", "logo": "tencent.png" },
+      { "name": "阿里巴巴", "url": "https://www.alibabagroup.com", "logo": "alibaba.png" },
+      { "name": "深势科技 (DP Technology)", "url": "https://www.dp.tech", "logo": "dp.png" }
     ],
     "publications": [
       { "title": "Efficient Retrieval-Augmented Agents for Campus Services", "authors": ["Zhang S.","Li S.","Wang W.","Zhao L."], "venue": "NeurIPS", "year": 2024, "link": "#", "tags": ["Agent","RAG","Systems"] },
@@ -209,6 +207,16 @@
           ${canMore? `<div class="text-center mt-2"><button id="load-more" class="rounded-xl border px-4 py-2 hover:bg-gray-50">加载更多</button></div>`:''}
           <div id="feed-sentinel" class="h-10"></div>
         </section>
+        <div class="py-10">
+          <div class="flex items-center gap-2 mb-6"><i data-lucide="handshake" class="w-5 h-5"></i><h2 class="text-2xl md:text-3xl font-bold">合作伙伴</h2></div>
+          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+            ${DATA.partners.map(p=> `
+              <div class="card bg-white p-6 flex items-center justify-center">
+                <img src="logos/${p.logo || 'AILab.png'}" alt="${p.name} Logo" class="h-12 object-contain" title="${p.name}" />
+              </div>
+            `).join('')}
+          </div>
+        </div>
       `;
     }
 
@@ -270,23 +278,6 @@
             <div class="text-sm text-gray-500">${m.role}</div>
           </div>
         </div>
-      `;
-    }
-
-    function renderPartners(){
-      return `
-        <section class="py-10">
-          <div class="flex items-center gap-2 mb-6"><i data-lucide="handshake" class="w-5 h-5"></i><h2 class="text-2xl md:text-3xl font-bold">合作伙伴</h2></div>
-          <p class="text-gray-600 mb-6">我们与企业、科研机构与开源社区保持长期合作，共同推进人才培养与产学研协同。</p>
-          <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-            ${DATA.partners.map(p=> `
-              <a href="${p.url || '#'}" class="card bg-white p-6 hover:shadow transition" title="${p.url? `访问 ${p.name}`:''}">
-                <div class="text-center font-medium">${p.name}</div>
-              </a>
-            `).join('')}
-          </div>
-          <div class="mt-8 text-sm text-gray-500">* 如需展示对方 Logo，请确认品牌使用规范与授权。</div>
-        </section>
       `;
     }
 
@@ -369,7 +360,6 @@
       if(route==='home') app.innerHTML = renderHome(state);
       if(route==='events') app.innerHTML = renderEvents(state);
       if(route==='members') app.innerHTML = renderMembers(state);
-      if(route==='partners') app.innerHTML = renderPartners(state);
       if(route==='pubs') app.innerHTML = renderPubs(state);
       if(route==='contact') app.innerHTML = renderContact(state);
 
